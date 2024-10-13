@@ -1,0 +1,23 @@
+{
+  "name": "token-authentication",
+  "version": "1.0.0",
+  "description": "token-authentication with nodejs and reactjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rineliniguezsosa/token-authentication.git"
+  },
+  "keywords": [
+    "token",
+    "autentication"
+  ],
+  "author": "rinel iniguez sosa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rineliniguezsosa/token-authentication/issues"
+  },
+  "homepage": "https://github.com/rineliniguezsosa/token-authentication#readme"
+}
