@@ -12,10 +12,10 @@ export const postuser = async(req:Request,resp:Response) =>{
 
 export const getuser = async(req:Request,resp:Response) =>{
 
-    const body = req.query;
+    const query = req.query; // GET ALL QUERY PARAMS
 
     resp.json({
         status:true,
-        message:body
+        message:query
     })
 }
