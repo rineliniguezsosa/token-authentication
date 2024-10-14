@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/rineliniguezsosa/token-authentication#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "express": "^4.21.1",
     "ts-node-dev": "^2.0.0",
