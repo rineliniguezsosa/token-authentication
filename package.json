@@ -4,8 +4,8 @@
   "description": "token-authentication with nodejs and reactjs",
   "main": "index.js",
   "scripts": {
-    "dev":"ts-node-dev --respawn --transpile-only src/server.ts",
-    "build":"tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,5 +26,8 @@
     "express": "^4.21.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }
