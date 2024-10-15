@@ -32,4 +32,10 @@ const usuarioSchema =  new Schema({
     }
 })
 
+// esto oculta la data
+usuarioSchema.methods.toJSON = function(){
+    const { __v,password,...usuario } = this.Object();
+    return usuario;
+}
+
 export const usuarioModel = model('Usuario',usuarioSchema);
