@@ -34,7 +34,8 @@ const usuarioSchema =  new Schema({
 
 // esto oculta la data
 usuarioSchema.methods.toJSON = function(){
-    const { __v,password,...usuario } = this.Object();
+    const { __v,password,_id,...usuario } = this.Object();
+    usuario.uid = _id;
     return usuario;
 }
 
