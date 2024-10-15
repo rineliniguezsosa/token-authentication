@@ -15,3 +15,10 @@ export const existEmail = async(correo = '') =>{
         throw new Error(`El usuario con el ${correo} ya existe`)
     }
 }
+
+export const existusuariobyid = async(id = '') =>{
+    const existusuario = await usuarioModel.findById({id});
+    if(!existusuario){
+        throw new Error(`El usuario con el ${id} no existe`)
+    }
+}
