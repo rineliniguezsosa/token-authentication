@@ -58,3 +58,15 @@ export const updateUser = async(req:Request,resp:Response) =>{
         message:usuario
     })
 }
+
+export const deleteuser = async(req:Request,resp:Response) =>{
+
+    const { id } = req.params; // GET ALL QUERY PARAMS
+
+    const usuario = await usuarioModel.findByIdAndUpdate({id,status:false});
+
+    resp.json({
+        status:true,
+        message:usuario
+    })
+}
