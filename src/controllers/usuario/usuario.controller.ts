@@ -32,7 +32,7 @@ export const getuser = async(req:Request,resp:Response) =>{
 export const updateUser = async(req:Request,resp:Response) =>{
 
     const { id } = req.params; // GET ALL QUERY PARAMS
-    const { password,google,correo,...resto} = req.body;
+    const { _id,password,google,correo,...resto} = req.body;
     console.log(password,resto);
     
     if(password){
