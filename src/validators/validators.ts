@@ -1,4 +1,4 @@
-import { body } from 'express-validator';
+import { body,param } from 'express-validator';
 import { validaterrors } from '../middlewares';
 import { existRol,existEmail } from '../helpers';
 
@@ -8,5 +8,10 @@ export const validateUser = [
     body('correo').trim().isEmail().withMessage('El campo correo debe de estar en el formato email').custom(existEmail),
     // body('rol').isIn(['ADMIN-ROLE','USER_ROLE']),
     body('rol').custom(existRol),
+    validaterrors
+]
+
+export const validateUpdateuser = [
+    param('id','No es un id valido de mongo').isMongoId(),
     validaterrors
 ]
