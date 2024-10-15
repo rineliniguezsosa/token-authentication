@@ -29,6 +29,17 @@ export const getuser = async(req:Request,resp:Response) =>{
     })
 }
 
+export const getUsuarios = async(req:Request,resp:Response) =>{
+
+    const { limite = 5, desde = 0} = req.query; // GET ALL QUERY PARAMS
+    const usuario = await usuarioModel.find().skip(Number(desde)).limit(Number(limite))
+
+    resp.json({
+        status:true,
+        message:usuario
+    })
+}
+
 export const updateUser = async(req:Request,resp:Response) =>{
 
     const { id } = req.params; // GET ALL QUERY PARAMS
