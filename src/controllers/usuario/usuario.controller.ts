@@ -31,10 +31,19 @@ export const getuser = async(req:Request,resp:Response) =>{
 
 export const updateUser = async(req:Request,resp:Response) =>{
 
-    const query = req.query; // GET ALL QUERY PARAMS
+    const { id } = req.params; // GET ALL QUERY PARAMS
+    const { password,google,correo,...resto} = req.body;
+    console.log(password,resto);
+    
+    if(password){
+        const salt = bcrypt.genSaltSync()
+        resto.password = bcrypt.hashSync(password,salt)
+    }
+
+    const usuario = await usuarioModel.findByIdAndUpdate({id,resto});
 
     resp.json({
         status:true,
-        message:query
+        message:usuario
     })
 }
