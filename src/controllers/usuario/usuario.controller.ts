@@ -8,6 +8,13 @@ export const postuser = async(req:Request,resp:Response) =>{
     const newuser = new usuarioModel({nombre,correo,password,rol});
 
     //verify the email
+    const existEmail = await usuarioModel.findOne({correo});
+    if(existEmail){
+        resp.status(400).json({
+            status:false,
+            message:`El usuario con el ${correo} ya existe`
+        })
+    }
 
     //encript the password
     const salt = bcrypt.genSaltSync()
