@@ -18,5 +18,6 @@ export const validateUpdateuser = [
 ]
 
 export const deleteuser = [
-    param('id','No es un id valido de mongo').isMongoId().custom(existusuariobyid)
+    param('id','No es un id valido de mongo').isMongoId().custom(existusuariobyid),
+    validaterrors
 ]
