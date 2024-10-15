@@ -1,6 +1,6 @@
 import { body,param } from 'express-validator';
 import { validaterrors } from '../middlewares';
-import { existRol,existEmail } from '../helpers';
+import { existRol,existEmail,existusuariobyid } from '../helpers';
 
 export const validateUser = [
     body('nombre','').trim().not().isEmpty(),
@@ -12,6 +12,7 @@ export const validateUser = [
 ]
 
 export const validateUpdateuser = [
-    param('id','No es un id valido de mongo').isMongoId(),
+    param('id','No es un id valido de mongo').isMongoId().custom(existusuariobyid),
+    body('rol').custom(existRol),
     validaterrors
 ]
