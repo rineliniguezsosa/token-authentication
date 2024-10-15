@@ -21,3 +21,9 @@ export const deleteuser = [
     param('id','No es un id valido de mongo').isMongoId().custom(existusuariobyid),
     validaterrors
 ]
+
+export const validatelogin = [
+    body('correo').trim().isEmail().not().isEmpty(),
+    body('password').trim().not().isEmpty(),
+    validaterrors
+]
