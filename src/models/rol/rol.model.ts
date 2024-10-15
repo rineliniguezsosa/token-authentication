@@ -7,4 +7,4 @@ const rolSchema = new Schema({
     }
 })
 
-export const rolModel = model('rol',rolSchema)
+export const rolModel = model('role',rolSchema)
