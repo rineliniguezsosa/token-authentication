@@ -1,5 +1,5 @@
 import express from 'express';
-import { usuarioRouter } from './routes';
+import { authRouter, usuarioRouter } from './routes';
 import { connectdb } from './config';
 import cors from 'cors';
 const app = express();
@@ -7,6 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use('/api/usuario',usuarioRouter)
+app.use('/auth',authRouter)
 
 connectdb();
 
