@@ -1,5 +1,5 @@
 import { body,param } from 'express-validator';
-import { validaterrors } from '../middlewares';
+import { isAdminrol, validaterrors } from '../middlewares';
 import { existRol,existEmail,existusuariobyid } from '../helpers';
 import { validarjwtinRoutes } from '../middlewares';
 
@@ -20,6 +20,7 @@ export const validateUpdateuser = [
 
 export const deleteuser = [
     validarjwtinRoutes,
+    isAdminrol,
     param('id','No es un id valido de mongo').isMongoId().custom(existusuariobyid),
     validaterrors
 ]
