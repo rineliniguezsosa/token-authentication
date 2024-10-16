@@ -1,6 +1,7 @@
 import { body,param } from 'express-validator';
 import { validaterrors } from '../middlewares';
 import { existRol,existEmail,existusuariobyid } from '../helpers';
+import { validarjwtinRoutes } from '../middlewares';
 
 export const validateUser = [
     body('nombre','').trim().not().isEmpty(),
@@ -18,6 +19,7 @@ export const validateUpdateuser = [
 ]
 
 export const deleteuser = [
+    validarjwtinRoutes,
     param('id','No es un id valido de mongo').isMongoId().custom(existusuariobyid),
     validaterrors
 ]
