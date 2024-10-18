@@ -1,7 +1,11 @@
 import express from 'express';
 import { authRouter, usuarioRouter } from './routes';
 import { connectdb } from './config';
+import * as dotenv from 'dotenv';
 import cors from 'cors';
+
+dotenv.config();
+
 const app = express();
 
 app.use(express.json());
@@ -11,6 +15,6 @@ app.use('/auth',authRouter)
 
 connectdb();
 
-app.listen(3000,()=>{
-    console.log('This server is running in the por 3000');
+app.listen(process.env.PORT,()=>{
+    console.log(`his server is running in the por ${process.env.PORT}`);
 })
