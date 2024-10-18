@@ -1,5 +1,5 @@
 import express from 'express';
-import { authRouter, usuarioRouter } from './routes';
+import { authRouter, googleRouter, usuarioRouter } from './routes';
 import { connectdb } from './config';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/api/usuario',usuarioRouter)
 app.use('/auth',authRouter)
+app.use('/google-auth',googleRouter)
 
 connectdb();
 
