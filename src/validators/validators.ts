@@ -31,3 +31,8 @@ export const validatelogin = [
     body('password').trim().not().isEmpty(),
     validaterrors
 ]
+
+export const validateGooglelogin = [
+    body('id_token','Es necesario un token de google').not().isEmpty(),
+    validaterrors
+]
