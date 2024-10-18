@@ -9,7 +9,9 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:process.env.FRONTENDURL
+}));
 app.use('/api/usuario',usuarioRouter)
 app.use('/auth',authRouter)
 app.use('/google-auth',googleRouter)
