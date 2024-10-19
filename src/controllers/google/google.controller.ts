@@ -20,8 +20,9 @@ export const googleLogin = async(req:Request,resp:Response) =>{
             const data = {
                 nombre:name,
                 correo:email,
-                password:'',
+                password:':)',
                 img:picture,
+                rol: "USER_ROLE",
                 google:true
             }
 
