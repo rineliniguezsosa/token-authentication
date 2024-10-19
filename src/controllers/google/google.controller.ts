@@ -14,7 +14,10 @@ export const googleLogin = async(req:Request,resp:Response) =>{
         })
     } catch (error) {
         console.log(error);
-        throw new Error('Algo ha salido mal')
+        resp.status(400).json({
+            status:false,
+            message:'El token no se pudo verificar'
+        })
         
     }
 }
