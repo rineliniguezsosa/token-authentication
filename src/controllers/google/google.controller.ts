@@ -1,9 +1,18 @@
 import { Request,Response } from 'express';
+import { googleverify } from '../../helpers';
 
 export const googleLogin = async(req:Request,resp:Response) =>{
     const { id_token } = req.body;
-    resp.json({
-        status:true,
-        message:id_token
-    })
+
+    try {
+        const google = await googleverify(id_token);
+        console.log("google data: ",google);
+        
+        resp.json({
+            status:true,
+            message:id_token
+        })
+    } catch (error) {
+        
+    }
 }
