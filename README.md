@@ -34,13 +34,13 @@ Follow these steps to download and run the project locally
   Open your terminal and run the following command:
 
    ```bash
-   git clone https://github.com/rineliniguezsosa/chat.git
+   git clone https://github.com/rineliniguezsosa/token-authentication.git
    ```
 
 2. **Navigate to the apichat backend folder**
 
     ```bash
-    cd apichat
+    cd token-authentication
     ```
 3. **Install the dependencies:**
 
